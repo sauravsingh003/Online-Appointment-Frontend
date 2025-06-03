@@ -1,0 +1,27 @@
+.custom-navbar {
+  background-color: #ffffff;
+  padding: 0.8rem 1rem;
+  z-index: 1050;
+}
+
+.custom-navbar .nav-link {
+  font-weight: 500;
+  color: #444;
+  margin-left: 1rem;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  color: #0d6efd; /* Bootstrap primary */
+  text-decoration: underline;
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+
+body {
+  padding-top: 75px; /* Adjust to your navbar height to prevent content overlap */
+}

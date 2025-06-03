@@ -1,0 +1,129 @@
+/* Global smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+.home {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero {
+  height: 60vh;
+  background: url('https://images.unsplash.com/photo-1588776814546-cb59a5ee5f33?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.services .service-card,
+.testimonials .testimonial-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+}
+
+.services .service-card:hover,
+.testimonials .testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+}
+
+.how-it-works .step-card {
+  border: 2px solid #0d6efd;
+  border-radius: 10px;
+  background: white;
+  transition: background-color 0.3s ease;
+}
+
+.how-it-works .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.how-it-works .col-md-4 {
+  display: flex;
+}
+
+.how-it-works .step-card {
+  flex: 1;          /* Make step cards grow equally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Optional: center content vertically */
+}
+
+.step-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0d6efd;
+}
+
+.step-card:hover {
+  background-color: #e7f1ff;
+}
+
+.testimonials .testimonial-card {
+  font-style: italic;
+  border-left: 4px solid #0d6efd;
+  min-height: 150px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Search doctor form */
+.search-doctor form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-doctor input {
+  min-width: 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero {
+    height: 40vh;
+  }
+
+  .services .service-card,
+  .testimonials .testimonial-card,
+  .how-it-works .step-card {
+    margin-bottom: 20px;
+  }
+
+  .search-doctor form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-doctor input {
+    width: 100% !important;
+  }
+
+  .search-doctor button {
+    width: 100%;
+  }
+}
+
