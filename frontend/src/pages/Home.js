@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import CSS
-import './Home.css';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "./Home.css";
 
 const Home = () => {
   useEffect(() => {
@@ -11,20 +11,42 @@ const Home = () => {
 
   return (
     <div className="home">
-
       {/* Hero Section */}
-      <section className="hero d-flex align-items-center justify-content-center text-center text-white" data-aos="fade-in">
-        <div className="overlay"></div>
-        <div className="container position-relative">
-          <h1 className="display-4 fw-bold mb-3">Your Health, Our Priority</h1>
-          <p className="lead mb-4">
-            Book appointments with trusted doctors anytime, anywhere.
-          </p>
-          <Link to="/book" className="btn btn-lg btn-primary">Book Appointment</Link>
+      <section className="hero-wrapper py-5 px-3">
+        <div className="container hero-container">
+          <div className="row align-items-center g-0">
+            {/* Left Content */}
+            <div className="col-md-6 content-left">
+              <h1 className="display-5 fw-bold">
+                Book Appointment
+                <br />
+                With Trusted Doctors
+              </h1>
+              <p className="lead mt-3">
+                Simply browse through our extensive list of trusted doctors,
+                schedule your appointment hassle-free.
+              </p>
+              <Link
+                to="/book"
+                className="btn btn-light mt-3 px-4 py-2 fw-semibold"
+              >
+                Book appointment →
+              </Link>
+            </div>
+
+            {/* Right Image */}
+            <div className="col-md-6 text-center">
+              <img
+                src="/images/heroImg2.png"
+                alt="Doctors"
+                className="hero-img"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Doctor Search Section */}
+      {/* Search Doctor Section */}
       <section className="search-doctor py-5" data-aos="fade-up">
         <div className="container text-center">
           <h2 className="mb-4">Find a Doctor</h2>
@@ -34,7 +56,9 @@ const Home = () => {
               className="form-control w-50 me-2"
               placeholder="Search by name or specialty"
             />
-            <button type="submit" className="btn btn-primary">Search</button>
+            <button type="submit" className="btn btn-primary">
+              Search
+            </button>
           </form>
         </div>
       </section>
@@ -131,7 +155,6 @@ const Home = () => {
         <p className="mb-0">© 2025 DocApp. All rights reserved.</p>
         <p>Contact us: support@docapp.com | +1 (555) 123-4567</p>
       </footer>
-
     </div>
   );
 };

@@ -5,125 +5,386 @@ html {
 
 .home {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f9fafb;
 }
 
-.hero {
-  height: 60vh;
-  background: url('https://images.unsplash.com/photo-1588776814546-cb59a5ee5f33?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+/* ===== HERO SECTION ===== */
+.hero-wrapper {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.hero-wrapper .container {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  align-items: flex-end; /* aligns items at bottom */
+  justify-content: space-between; /* separates content-left and image */
+  gap: 2rem;
+  min-height: 420px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #5b7cfa;
+  border-radius: 16px;
+  padding: 40px 30px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(91, 124, 250, 0.3);
+}
+
+
+.hero-wrapper .content-left {
+  flex: 1;
   color: white;
-}
-
-.hero .overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 1;
-}
-
-.hero .container {
-  position: relative;
   z-index: 2;
 }
 
-.services .service-card,
-.testimonials .testimonial-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: white;
-}
-
-.services .service-card:hover,
-.testimonials .testimonial-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.service-icon {
+.hero-wrapper .content-left h1 {
+  font-weight: 700;
   font-size: 2.5rem;
+  line-height: 1.2;
 }
 
-.how-it-works .step-card {
-  border: 2px solid #0d6efd;
-  border-radius: 10px;
-  background: white;
+.hero-wrapper .content-left p {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.hero-wrapper .btn-light {
+  margin-top: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  min-width: 160px;
+  cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.hero-wrapper .btn-light:hover {
+  background-color: #4a68e9;
+  color: white;
+}
+
+.hero-wrapper img.hero-img {
+  position: absolute;
+  bottom: 0;
+  right: 30px; /* aligns with container padding */
+  max-height: 350px; /* adjust this to control top padding */
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+
+
+/* ===== SEARCH DOCTOR SECTION ===== */
+.search-doctor {
+  padding: 3rem 1rem;
+  background-color: white;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+}
+
+.search-doctor .container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.search-doctor h2 {
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #212529;
+}
+
+.search-doctor form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.search-doctor input {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #5b7cfa;
+  border-radius: 6px;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.search-doctor input:focus {
+  border-color: #3a5bdb;
+  outline: none;
+}
+
+.search-doctor button {
+  background-color: #5b7cfa;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-doctor button:hover {
+  background-color: #3a5bdb;
+}
+
+/* ===== SERVICES SECTION ===== */
+.services {
+  padding: 3rem 1rem;
+}
+
+.services .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services h2 {
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #212529;
+}
+
+.services .row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.services .service-card {
+  background: white;
+  flex: 1 1 300px;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.services .service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgb(0 0 0 / 0.15);
+}
+
+.services .service-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.services h5 {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.services p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+/* ===== HOW IT WORKS SECTION ===== */
+.how-it-works {
+  padding: 3rem 1rem;
+  background-color: #f8f9fa;
+}
+
+.how-it-works .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.how-it-works h2 {
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #212529;
 }
 
 .how-it-works .row {
   display: flex;
+  gap: 1.5rem;
   flex-wrap: wrap;
-}
-
-.how-it-works .col-md-4 {
-  display: flex;
+  justify-content: center;
 }
 
 .how-it-works .step-card {
-  flex: 1;          /* Make step cards grow equally */
+  flex: 1 1 300px;
+  padding: 2rem 1.5rem;
+  background: white;
+  border: 2px solid #0d6efd;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Optional: center content vertically */
+  justify-content: center;
+  cursor: default;
 }
 
-.step-number {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #0d6efd;
-}
-
-.step-card:hover {
+.how-it-works .step-card:hover {
   background-color: #e7f1ff;
 }
 
-.testimonials .testimonial-card {
-  font-style: italic;
-  border-left: 4px solid #0d6efd;
-  min-height: 150px;
-  padding: 20px;
-  box-sizing: border-box;
+.how-it-works .step-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0d6efd;
+  margin-bottom: 1rem;
 }
 
-/* Search doctor form */
-.search-doctor form {
-  max-width: 600px;
+.how-it-works h5 {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.how-it-works p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+/* ===== TESTIMONIALS SECTION ===== */
+.testimonials {
+  padding: 3rem 1rem;
+}
+
+.testimonials .container {
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.search-doctor input {
-  min-width: 0;
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #212529;
+}
+
+.testimonials .row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.testimonials .testimonial-card {
+  background: white;
+  flex: 1 1 300px;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+  border-left: 4px solid #0d6efd;
+  font-style: italic;
+  min-height: 150px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.testimonials .testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgb(0 0 0 / 0.15);
+}
+
+.testimonials h6 {
+  margin-top: 1.5rem;
+  font-weight: 700;
+  font-style: normal;
+  color: #0d6efd;
+  text-align: right;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #212529;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  user-select: none;
 }
 
 footer p {
-  margin: 0;
+  margin: 0.2rem 0;
 }
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .hero {
-    height: 40vh;
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 992px) {
+  /* Hero stacked */
+  .hero-wrapper .container {
+    flex-direction: column;
+    min-height: auto;
+    padding: 30px 20px;
+  }
+
+  .hero-wrapper .content-left {
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+
+  .hero-wrapper .content-left h1 {
+    font-size: 2rem;
+  }
+
+  .hero-wrapper img.hero-img {
+    position: relative;
+    max-height: 300px;
+    width: 100%;
+    height: auto;
+    bottom: auto;
+    right: auto;
+    margin: 0 auto;
+  }
+
+  /* Services, How it works, Testimonials stacked */
+  .services .row,
+  .how-it-works .row,
+  .testimonials .row {
+    flex-direction: column;
+    align-items: center;
   }
 
   .services .service-card,
-  .testimonials .testimonial-card,
-  .how-it-works .step-card {
-    margin-bottom: 20px;
+  .how-it-works .step-card,
+  .testimonials .testimonial-card {
+    width: 100% !important;
+    max-width: 400px;
+    margin-bottom: 1.5rem;
   }
 
+  /* Search form stacked */
   .search-doctor form {
     flex-direction: column;
-    gap: 10px;
+    gap: 1rem;
   }
 
-  .search-doctor input {
-    width: 100% !important;
-  }
-
+  .search-doctor input,
   .search-doctor button {
-    width: 100%;
+    width: 100% !important;
   }
 }
 
+@media (max-width: 576px) {
+  .hero-wrapper .content-left h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-wrapper .content-left p {
+    font-size: 1rem;
+  }
+
+  .hero-wrapper .btn-light {
+    min-width: 140px;
+    padding: 0.5rem 1.25rem;
+  }
+}

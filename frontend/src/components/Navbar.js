@@ -1,47 +1,75 @@
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import './Navbar.css';
 
 function Navbar() {
   const { role, setRole } = useAuth();
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLogout = () => {
     setRole(null);
     alert("Logged out");
     navigate("/");
+    setMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(prev => !prev);
+  };
+
+  // Close menu on link click (for mobile UX)
+  const closeMenu = () => {
+    setMenuOpen(false);
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4">
-      <Link className="navbar-brand" to="/">🩺 DocApp</Link>
+    <nav className="custom-navbar">
+      <div className="container d-flex align-items-center justify-content-between">
+        <Link to="/" className="navbar-brand logo" onClick={closeMenu}>🩺 DocApp</Link>
 
-      <div className="collapse navbar-collapse">
-        <ul className="navbar-nav me-auto">
+        {/* Hamburger button */}
+        <div className="hamburger" onClick={toggleMenu} aria-label="Toggle menu" aria-expanded={menuOpen}>
+          <span className={menuOpen ? 'open' : ''}></span>
+          <span className={menuOpen ? 'open' : ''}></span>
+          <span className={menuOpen ? 'open' : ''}></span>
+        </div>
+
+        {/* Nav links - toggle show on mobile */}
+        <ul className={`nav-links ${menuOpen ? 'show' : ''}`}>
+          <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+          <li><Link to="/doctors" onClick={closeMenu}>All Doctors</Link></li>
+          <li><Link to="/about" onClick={closeMenu}>About</Link></li>
+          <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
+
           {role === 'patient' && (
             <>
-              <li className="nav-item">
-                <Link className="nav-link" to="/dashboard/patient">Dashboard</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/book">Book</Link>
-              </li>
+              <li><Link to="/dashboard/patient" onClick={closeMenu}>Dashboard</Link></li>
+              <li><Link to="/book" onClick={closeMenu}>Book</Link></li>
             </>
           )}
+
           {role === 'doctor' && (
-            <li className="nav-item">
-              <Link className="nav-link" to="/dashboard/doctor">Appointments</Link>
-            </li>
+            <li><Link to="/dashboard/doctor" onClick={closeMenu}>Appointments</Link></li>
           )}
+
+          {/* Show create account or logout inside menu on mobile */}
+          <li className="mobile">
+            {role ? (
+              <button className="btn logout-btn" onClick={handleLogout}>Logout</button>
+            ) : (
+              <Link className="btn create-btn" to="/register" onClick={closeMenu}>Create Account</Link>
+            )}
+          </li>
         </ul>
 
-        <div className="d-flex">
+        {/* Show button on desktop only */}
+        <div className="desktop-btn">
           {role ? (
-            <button className="btn btn-outline-light" onClick={handleLogout}>Logout</button>
+            <button className="logout-btn" onClick={handleLogout}>Logout</button>
           ) : (
-            <>
-              <Link className="btn btn-outline-light me-2" to="/register">Register</Link>
-              <Link className="btn btn-outline-light" to="/login">Login</Link>
-            </>
+            <Link className="create-btn" to="/register">Create Account</Link>
           )}
         </div>
       </div>
