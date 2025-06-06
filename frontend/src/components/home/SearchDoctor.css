@@ -1,0 +1,67 @@
+.search-doctor {
+  padding: 3rem 1rem;
+  background-color: white;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+}
+
+.search-doctor .container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.search-doctor h2 {
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #212529;
+}
+
+.search-doctor form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.search-doctor input {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #5b7cfa;
+  border-radius: 6px;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.search-doctor input:focus {
+  border-color: #3a5bdb;
+  outline: none;
+}
+
+.search-doctor button {
+  background-color: #5b7cfa;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-doctor button:hover {
+  background-color: #3a5bdb;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .search-doctor form {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .search-doctor input,
+  .search-doctor button {
+    width: 100% !important;
+  }
+}
