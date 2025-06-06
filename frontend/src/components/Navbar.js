@@ -27,7 +27,7 @@ function Navbar() {
   return (
     <nav className="custom-navbar">
       <div className="container d-flex align-items-center justify-content-between">
-        <Link to="/" className="navbar-brand logo" onClick={closeMenu}>🩺 DocApp</Link>
+        <Link to="/" className="navbar-brand logo fs-3" onClick={closeMenu}>🩺 DocApp</Link>
 
         {/* Hamburger button */}
         <div className="hamburger" onClick={toggleMenu} aria-label="Toggle menu" aria-expanded={menuOpen}>

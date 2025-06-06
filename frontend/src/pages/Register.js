@@ -84,7 +84,7 @@ function Register() {
 
           <div className="text-center mt-3">
           <small>
-            Don’t have an account? <Link to="/login">Login here</Link>
+            Already have an account? <Link to="/login">Login here</Link>
           </small>
         </div>
         </form>

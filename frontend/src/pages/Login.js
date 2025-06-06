@@ -29,9 +29,9 @@ function Login() {
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: '80vh' }}>
+    <div className="container mt-5" style={{ maxWidth: '500px' }}>
       <div className="border p-4 rounded shadow" style={{ width: '100%', maxWidth: '400px' }}>
-        <h3 className="text-center mb-4">Login</h3>
+        <h2 className="text-center mb-4">Login</h2>
         <form onSubmit={handleLogin}>
           <div className="mb-3">
             <label className="form-label">Email</label>

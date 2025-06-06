@@ -10,7 +10,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="home">
+    <div className="home bg-light">
       {/* Hero Section */}
       <section className="hero-wrapper py-5 px-3">
         <div className="container hero-container">
@@ -153,7 +153,7 @@ const Home = () => {
       {/* Footer */}
       <footer className="bg-dark text-white text-center py-3">
         <p className="mb-0">© 2025 DocApp. All rights reserved.</p>
-        <p>Contact us: support@docapp.com | +1 (555) 123-4567</p>
+        <p>Contact us: support@docapp.com</p>
       </footer>
     </div>
   );
