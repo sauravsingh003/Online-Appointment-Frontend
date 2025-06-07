@@ -1,0 +1,12 @@
+.all-doctors-page {
+  padding: 3rem 1rem;
+  background-color: #f8f9fb;
+  min-height: 100vh;
+}
+
+.all-doctors-page h2 {
+  font-weight: 700;
+  font-size: 2.25rem;
+  color: #212529;
+  margin-bottom: 2rem;
+}

@@ -1,29 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./FeaturedDoctors.css";
-
-const doctors = [
-  {
-    id: 1,
-    name: "Dr. Aditi Sharma",
-    specialty: "Cardiologist",
-    image: "../images/doc1.jpg",
-    tagline: "20+ Years Experience",
-  },
-  {
-    id: 2,
-    name: "Dr. Rajesh Verma",
-    specialty: "Dermatologist",
-    image: "../images/doc2.jpg",
-    tagline: "Top Skin Specialist",
-  },
-  {
-    id: 3,
-    name: "Dr. Neha Singh",
-    specialty: "Pediatrician",
-    image: "../images/doc3.jpg",
-    tagline: "Child Care Expert",
-  },
-];
+import doctors from "../../data/doctors"; 
 
 const FeaturedDoctors = () => (
   <section className="featured-doctors py-5 mb-5" data-aos="fade-up">
@@ -37,7 +15,7 @@ const FeaturedDoctors = () => (
               <h5>{name}</h5>
               <p className="specialty">{specialty}</p>
               <p className="tagline">{tagline}</p>
-              <button className="explore-btn">Explore</button>
+              <Link to={`/doctors/${id}`} className="explore-btn">Explore</Link>
             </div>
           </div>
         ))}
